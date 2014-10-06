@@ -31,6 +31,7 @@ będzie użyć Win2VNC.
 
 %build
 %{__aclocal}
+chmod +x "%{_topdir}/BUILD/%{name}-%{version}/configure"
 %{__autoconf}
 
 

@@ -39,18 +39,10 @@ będzie użyć Win2VNC.
 %{__make}
 
 %install
-if [[ -f "%{_rpmdir}/%{name}-%{version}-%{release}.${RPM_ARCH}.rpm" ]]; then
-	%{__rm} -f "%{_rpmdir}/%{name}-%{version}-%{release}.${RPM_ARCH}.rpm" \
-		|| exit 1
-fi
-if [[ -f "%{_rpmdir}/%{name}-debuginfo-%{version}-%{release}.${RPM_ARCH}.rpm" ]]; then
-	%{__rm} -f "%{_rpmdir}/%{name}-debuginfo-%{version}-%{release}.${RPM_ARCH}.rpm" \
-		|| exit 1
-fi
-if [[ -f "%{_srcrpmdir}/%{name}-%{version}-%{release}.src.rpm" ]]; then
-	%{__rm} -f "%{_srcrpmdir}/%{name}-%{version}-%{release}.src.rpm" \
-		|| exit 1
-fi
+# delete existing rpm's
+%{__rm} -fv "%{_rpmdir}/%{name}-%{version}-"*".${RPM_ARCH}.rpm"
+%{__rm} -fv "%{_rpmdir}/%{name}-debuginfo-%{version}-"*".${RPM_ARCH}.rpm"
+%{__rm} -fv "%{_srcrpmdir}/%{name}-%{version}-"*".src.rpm"
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_mandir}
 

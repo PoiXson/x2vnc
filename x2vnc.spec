@@ -46,14 +46,15 @@ chmod +x "%{_topdir}/BUILD/%{name}-%{version}/configure"
 %{__rm} -fv "%{_rpmdir}/%{name}-%{version}-"*".${RPM_ARCH}.rpm"
 %{__rm} -fv "%{_rpmdir}/%{name}-debuginfo-%{version}-"*".${RPM_ARCH}.rpm"
 %{__rm} -fv "%{_srcrpmdir}/%{name}-%{version}-"*".src.rpm"
-rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_mandir}
+# build installables
+%{__rm} -rf ${RPM_BUILD_ROOT}
+%{__install} -d ${RPM_BUILD_ROOT}%{_mandir}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+%{__rm} -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)

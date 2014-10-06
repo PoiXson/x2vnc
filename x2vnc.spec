@@ -3,14 +3,13 @@ Summary(pl.UTF-8):	Program umożliwiający pracę jedną klawiaturą i myszką n
 Name:		x2vnc
 Version:	1.7.2
 Release:	1
+BuildRequires:	libX11-devel, autoconf, automake
+#BuildRequires:	XFree86-devel, autoconf, automake
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	http://fredrik.hubbe.net/x2vnc/%{name}-%{version}.tar.gz
 # Source0-md5:	f23f86bcfa12a80eaeb886ab9b3ee447
 URL:		http://fredrik.hubbe.net/x2vnc.html
-BuildRequires:	XFree86-devel
-BuildRequires:	autoconf
-BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -34,9 +33,10 @@ będzie użyć Win2VNC.
 %{__aclocal}
 %{__autoconf}
 
-%configure
 
-%{__make}
+
+%configure --without-xf86dga
+%{__make} %{?_smp_mflags}
 
 %install
 # delete existing rpm's

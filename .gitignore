@@ -1,0 +1,9 @@
+rpmbuild-root/
+.git/
+*.rpm
+*.tar.gz
+
+*.swp
+.*.swp
+*~
+

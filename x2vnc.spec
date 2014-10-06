@@ -1,6 +1,6 @@
+Name:		x2vnc
 Summary:	A dual-screen hack for one keyboard and mouse on two machines
 Summary(pl.UTF-8):	Program umożliwiający pracę jedną klawiaturą i myszką na dwóch komputerach
-Name:		x2vnc
 Version:	1.7.2
 Release:	%{RELEASE}
 BuildRequires:	libX11-devel, autoconf, automake
@@ -28,8 +28,12 @@ jeżeli jeden z komputerów korzysta z Windows 95/98/NT a drugi z
 X-Window. Jeżeli oba korzystają z Windows, prawdopodobnie lepiej
 będzie użyć Win2VNC.
 
+
+
 %prep
 %setup -q
+
+
 
 %build
 %{__aclocal}
@@ -41,6 +45,8 @@ chmod +x "%{_topdir}/BUILD/%{name}-%{version}/configure"
 %configure --without-xf86dga
 %{__make} %{?_smp_mflags}
 
+
+
 %install
 # delete existing rpm's
 %{__rm} -fv "%{_rpmdir}/%{name}-%{version}-"*".${RPM_ARCH}.rpm"
@@ -49,12 +55,14 @@ chmod +x "%{_topdir}/BUILD/%{name}-%{version}/configure"
 # build installables
 %{__rm} -rf ${RPM_BUILD_ROOT}
 %{__install} -d ${RPM_BUILD_ROOT}%{_mandir}
+%{__make} install DESTDIR=${RPM_BUILD_ROOT}
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+
 
 %clean
 %{__rm} -rf $RPM_BUILD_ROOT
+
+
 
 %files
 %defattr(644,root,root,755)
@@ -100,3 +108,4 @@ chmod +x "%{_topdir}/BUILD/%{name}-%{version}/configure"
 
 * Mon Feb 12 2007 Michael Stahnke <mastahnke@gmail.com> - 1.7.2-1
 - Initial packaging.
+

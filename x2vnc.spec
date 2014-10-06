@@ -2,15 +2,17 @@ Summary:	A dual-screen hack for one keyboard and mouse on two machines
 Summary(pl.UTF-8):	Program umożliwiający pracę jedną klawiaturą i myszką na dwóch komputerach
 Name:		x2vnc
 Version:	1.7.2
-Release:	1
+Release:	%{RELEASE}
 BuildRequires:	libX11-devel, autoconf, automake
 #BuildRequires:	XFree86-devel, autoconf, automake
+Prefix:		/usr/local/bin
+%define _rpmfilename    %%{NAME}-%%{VERSION}-%%{RELEASE}.%%{ARCH}.rpm
+
 License:	GPL
 Group:		X11/Applications/Networking
 Source0:	http://fredrik.hubbe.net/x2vnc/%{name}-%{version}.tar.gz
 # Source0-md5:	f23f86bcfa12a80eaeb886ab9b3ee447
 URL:		http://fredrik.hubbe.net/x2vnc.html
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This program will let you use two screens on two different computers

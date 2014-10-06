@@ -58,6 +58,7 @@ chmod +x "%{_topdir}/BUILD/%{name}-%{version}/configure"
 
 %files
 %defattr(644,root,root,755)
+%doc README ChangeLog COPYING
 %attr(755,root,root) %{_bindir}/x2vnc
 %{_mandir}/man*/*
 

@@ -59,7 +59,10 @@ chmod +x "%{_topdir}/BUILD/%{name}-%{version}/configure"
 
 
 %clean
-%{__rm} -rf $RPM_BUILD_ROOT
+if [ ! -z "%{_topdir}" ]; then
+	%{__rm} -rf --preserve-root "%{_topdir}" \
+		|| echo "Failed to delete build root!"
+fi
 
 
 

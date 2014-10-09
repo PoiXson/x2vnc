@@ -61,8 +61,7 @@ rpmbuild -ba \
 	--define="_tmppath ${BUILD_ROOT}/tmp" \
 	--define="_rpmdir ${OUTPUT_DIR}" \
 	--define="_srcrpmdir ${OUTPUT_DIR}" \
-	--define="RELEASE ${BUILD_NUMBER}" \
+	--define="BUILD_NUMBER ${BUILD_NUMBER}" \
 	"${BUILD_ROOT}/SPECS/${SPEC_FILE}" \
 		|| exit 1
-
 

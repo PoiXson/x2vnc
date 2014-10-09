@@ -2,7 +2,7 @@ Name:		x2vnc
 Summary:	A dual-screen hack for one keyboard and mouse on two machines
 Summary(pl.UTF-8):	Program umożliwiający pracę jedną klawiaturą i myszką na dwóch komputerach
 Version:	1.7.2
-Release:	%{RELEASE}
+Release:	14_%{BUILD_NUMBER}
 BuildRequires:	libX11-devel, autoconf, automake
 #BuildRequires:	XFree86-devel, autoconf, automake
 Prefix:		/usr/local/bin

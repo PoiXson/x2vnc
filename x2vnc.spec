@@ -10,6 +10,7 @@ Prefix          : /usr/local/bin
 
 License         : GPL
 Group           : X11/Applications/Networking
+Packager        : PoiXson <support@poixson.com>
 Source0         : http://fredrik.hubbe.net/x2vnc/%{name}-%{version}.tar.gz
 # Source0-md5   : f23f86bcfa12a80eaeb886ab9b3ee447
 URL             : http://fredrik.hubbe.net/x2vnc.html

@@ -51,7 +51,7 @@ chmod +x "%{_topdir}/BUILD/%{name}-%{version}/configure"
 %install
 # delete existing rpm's
 %{__rm} -fv "%{_rpmdir}/%{name}-"*".${RPM_ARCH}.rpm"
-%{__rm} -fv "%{_srcrpmdir}/%{name}-"*".src.rpm"
+%{__rm} -fv "%{_rpmdir}/%{name}-"*".src.rpm"
 # build installables
 %{__rm} -rf ${RPM_BUILD_ROOT}
 %{__install} -d ${RPM_BUILD_ROOT}%{_mandir}
